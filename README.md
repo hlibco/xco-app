@@ -13,6 +13,13 @@ username: pablo
 password: picasso
 ```
 
+The Back-end code of the XCO Project has its own repository and is deployed independently. It gives more flexibility about tooling and deployment process.
+
+## Topology
+
+- Host/PaaS: Surge.sh
+- DNS: Google Domains
+
 ## Requirements
 
 Before running this project locally, it's required to have the XCO-API project up and running, serving HTTP traffic in the port 3009.
@@ -45,6 +52,15 @@ $ yarn generate
 - Logout
 - The query params in the URL of the page change on every submit of the `Filters` form (without refrshing the page). This allow a shareable url with pre-selected filters
 - Pre-fill the filters form with values from the URL query params
+
+## Production
+
+The front-end of the XCO Project is hosted on [surge.sh](https://surge.sh). The Surge's deployment process is faster and simpler then Heroku's. For SPAs that don't require Server Side Rendering (SSR), I'd go with Surge or [Netlify](https://www.netlify.com/). If the project's requirements are more complex or need more robustness, I'd suggest Amazon S3 + Cloudfront.
+
+## Technical Choices
+
+- Javascript Library: VueJS / Nuxt (Great tooling, DX and features)
+- CSS Preprocessor: Stylus (Faster and cleaner to write compared to Scss/Less)
 
 ## Preview
 

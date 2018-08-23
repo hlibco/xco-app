@@ -2,7 +2,7 @@
 
 <el-container v-if="isAuthenticated">
 
-  <el-aside width="260px">
+  <el-aside width="100%" class="sidebar">
 
     <el-form :model="filters"
       status-icon ref="filters"

@@ -47,8 +47,8 @@ export default {
         pass: ""
       },
       rules: {
-        pass: [{ validator: validatePass, trigger: "blur" }],
-        username: [{ validator: validateUsername, trigger: "blur" }]
+        // pass: [{ validator: validatePass, trigger: "blur" }],
+        // username: [{ validator: validateUsername, trigger: "blur" }]
       }
     };
   },
@@ -62,7 +62,9 @@ export default {
         await this.$store.dispatch("login", payload);
         this.$router.push("/providers");
       } catch (err) {
-        if (err.response.status === 400) {
+        if (!err.response) {
+          console.log("Can't reach to the API.");
+        } else if (err.response.status === 400) {
           this.errors = err.response.data.param;
         } else {
           console.log("We couldn't find your account.");
