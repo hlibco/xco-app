@@ -6,7 +6,7 @@
   "license": "MIT",
   "engines": {
     "node": "^8.10.0 || >=9.10.0",
-    "yarn": ">=1.9.4"
+    "yarn": ">=1.7.0"
   },
   "scripts": {
     "start": "PORT=3010 nuxt",
