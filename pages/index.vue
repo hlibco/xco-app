@@ -1,12 +1,14 @@
 <template>
   <section>
-    <h1 class="header">XCO PROJECT</h1>
+
     <div class="auth">
+
+      <h1 class="header">XCO PROJECT</h1>
+
       <el-form :model="authForm"
         status-icon ref="authForm"
-        :rules="rules" 
-        label-width="120px"
-        class="demo-ruleForm"
+        :rules="rules"
+        label-position="top"
         @submit.native.prevent="submitForm">
         <el-form-item label="Username" props="username">
           <el-input v-model="authForm.username"></el-input>
@@ -15,9 +17,10 @@
           <el-input type="password" v-model="authForm.pass" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="login('authForm')">Login</el-button>
+          <el-button type="primary" @click="login()">Login</el-button>
         </el-form-item>
       </el-form>
+
     </div>
   </section>
 </template>
@@ -50,7 +53,7 @@ export default {
     };
   },
   methods: {
-    async login(event) {
+    async login() {
       try {
         const payload = {
           username: this.authForm.username,
@@ -72,10 +75,11 @@ export default {
 <style scoped>
 .header {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
+.auth {
+  margin: 42px auto;
+  max-width: 400px;
 }
 </style>

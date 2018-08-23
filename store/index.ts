@@ -12,6 +12,9 @@ export const mutations = {
   },
   setProviderSummaryForTheTop100DRG(state, list) {
     state.providerSummaryForTheTop100DRG = list;
+  },
+  logout(state) {
+    state.authorization = null;
   }
 };
 
@@ -34,6 +37,11 @@ export const actions = {
       filters
     );
     commit("setProviderSummaryForTheTop100DRG", response);
+  },
+  async logout({ commit, dispatch, state, rootState }) {
+    const authService = new AuthService();
+    await authService.logout();
+    commit("logout");
   }
 };
 

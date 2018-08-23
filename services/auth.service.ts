@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   async logout() {
-    this.unsetToken();
+    await this.unsetToken();
   }
 
   private setToken(token) {

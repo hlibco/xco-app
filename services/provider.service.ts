@@ -1,5 +1,6 @@
 import jwtDecode from "jwt-decode";
 import Request from "../utils/request";
+import { objectToQueryParams } from "../utils/query";
 
 export class ProviderService {
   request: Request;
@@ -8,9 +9,9 @@ export class ProviderService {
   }
 
   async getProviderSummaryForTheTop100DRG(filters): Promise<any> {
-    console.log({ filters });
-    // @TODO Add filters as query params
-    const response = await this.request.Get("providers");
+    const queryParams = filters ? "/?" + objectToQueryParams(filters) : "";
+    console.log({ queryParams });
+    const response = await this.request.Get("providers" + queryParams);
     return response && response.data;
   }
 }
