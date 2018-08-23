@@ -39,7 +39,7 @@
         <el-input v-model="filters.state"></el-input>
       </el-form-item>
 
-      <el-form-item label="Fields" props="fields">
+      <el-form-item label="Fields (separated by comma)" props="fields">
         <el-input v-model="filters.fields"></el-input>
       </el-form-item>
 

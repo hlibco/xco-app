@@ -17,7 +17,7 @@
           <el-input type="password" v-model="authForm.pass" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="login()">Login</el-button>
+          <el-button type="primary" @click="login()">Login &rarr;</el-button>
         </el-form-item>
       </el-form>
 
@@ -72,14 +72,25 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 .header {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
   text-align: center;
 }
 
 .auth {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   margin: 42px auto;
   max-width: 400px;
+  padding: 24px 24px 4px;
+}
+
+.el-form--label-top .el-form-item__label {
+  line-height: normal;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
 }
 </style>

@@ -14,7 +14,7 @@
     "serve": "PORT=3010 nuxt start",
     "generate": "PORT=3010 nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "postinstall": "yarn generate"
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
