@@ -52,7 +52,7 @@ module.exports = {
   /*
    * Add element-ui in our app, see plugins/element-ui.js file
    */
-  plugins: ["@/plugins/element-ui"],
+  plugins: ["@/plugins/element-ui", { src: "~plugins/ga.js", ssr: false }],
   /*
    * Build configuration
    */

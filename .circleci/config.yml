@@ -50,7 +50,7 @@ jobs:
           name: Deploy to Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/xco-api.git HEAD:refs/heads/master || true
+              git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/xco-app.git HEAD:refs/heads/master || true
               sleep 8  # sleep for 8 seconds to wait for dynos
             fi
 
