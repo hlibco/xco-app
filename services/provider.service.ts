@@ -11,7 +11,9 @@ export class ProviderService {
   async getProviderSummaryForTheTop100DRG(filters): Promise<any> {
     const queryParams = filters ? "/?" + objectToQueryParams(filters) : "";
     console.log({ queryParams });
-    const response = await this.request.Get("providers" + queryParams);
+    const response = await this.request.Get(
+      "providers/camel-case" + queryParams
+    );
     return response && response.data;
   }
 }

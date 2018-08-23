@@ -94,7 +94,6 @@
 
 <script lang="ts">
 import { getQueryParams } from "../../utils/query";
-import { Delay } from "../../utils/delay";
 const query = getQueryParams();
 
 export default {
