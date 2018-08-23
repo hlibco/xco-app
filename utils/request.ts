@@ -9,7 +9,7 @@ export default class Request {
   axios = Axios.create({
     baseURL:
       process.env.NODE_ENV === "production"
-        ? "http://api.xcoproject.io"
+        ? "http://api.xcoproject.com"
         : "http://localhost:3009"
   });
 
